@@ -14,8 +14,8 @@ int main()
     B0=0;B1=0;B2=0;B3=0;
     cout<<"*************四则运算2.0*************"<<endl;
 
-    cout<<"请依次输入输出算式数量和每行显示数量："<<endl;
-    cin>>num>>line;
+    cout<<"请依次输入输出算式数量"<<endl;
+    cin>>num;
 
     cout<<"是否设置乘除法？   \"1\"=是，输入\"0\"=否"<<endl;
     cin>>CC;
@@ -145,7 +145,7 @@ int main()
              {
                  a1[A1]=a;
                  b1[A1]=b;
-                 c1[A1]=a+b;
+                 c1[A1]=a-b;
                  A1++;
              }
          }
@@ -166,7 +166,7 @@ int main()
              {
                  a2[A2]=a;
                  b2[A2]=b;
-                 c2[A2]=a+b;
+                 c2[A2]=a*b;
                  A2++;
              }
          }
@@ -189,7 +189,7 @@ int main()
             {
                  a3[A3]=a;
                  b3[A3]=b;
-                 c3[A3]=a+b;
+                 c3[A3]=a-b;
                  A3++;
              }
          }
@@ -210,10 +210,10 @@ int main()
          else
              cout<<" "<<b0[i]<<" ";
          cout<<"=";
-         if(k%line==0)
+         //if(k%line==0)
              cout<<endl;
-         else
-             cout<<"\t";
+         //else
+             //cout<<"\t";
      }
      for(i=0;i<A1;i++)                         // -
      {
@@ -228,10 +228,10 @@ int main()
          else
              cout<<" "<<b1[i]<<" ";
          cout<<"=";
-         if(k%line==0)
+         //if(k%line==0)
              cout<<endl;
-         else
-             cout<<"\t";
+        // else
+            // cout<<"\t";
      }
      for(i=0;i<A2;i++)                         // *
      {
@@ -246,10 +246,10 @@ int main()
          else
              cout<<" "<<b2[i]<<" ";
          cout<<"=";
-         if(k%line==0)
+         //if(k%line==0)
              cout<<endl;
-         else
-             cout<<"\t";
+        // else
+             //cout<<"\t";
      }
      for(i=0;i<A3;i++)                          // /
      {
@@ -264,10 +264,10 @@ int main()
          else
              cout<<" "<<b3[i]<<" ";
          cout<<"=";
-         if(k%line==0)
+         //if(k%line==0)
              cout<<endl;
-         else
-             cout<<"\t";
+        // else
+            // cout<<"\t";
      }
      cout<<"请在此输入各式的结果："<<endl;
      for(i=0;i<num;i++)
@@ -281,6 +281,7 @@ int main()
          else
          {
              t++;
+             cout<<c0[i]<<endl;
              cout<<"第"<<t<<"题答错！"<<endl;
          }
      }
@@ -291,6 +292,7 @@ int main()
          else
          {
              t++;
+             cout<<c1[i]<<endl;
              cout<<"第"<<t<<"题答错！"<<endl;
          }
      }
@@ -301,6 +303,7 @@ int main()
          else
          {
              t++;
+             cout<<c2[i]<<endl;
              cout<<"第"<<t<<"题答错！"<<endl;
          }
      }
@@ -311,10 +314,11 @@ int main()
          else
          {
              t++;
+             cout<<c3[i]<<endl;
              cout<<"第"<<t<<"题答错！"<<endl;
          }
      }
-     if(line==corr)
+     if(num==corr)
          cout<<"恭喜你都答对了！！！！！！"<<endl;
      return 0;
 }
